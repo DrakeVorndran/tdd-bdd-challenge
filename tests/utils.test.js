@@ -103,13 +103,15 @@ it("Should update the count of items in the cart");
 
 it("Should validate that an empty cart has 0 items", function() {
   const cart = new Cart();
+  expect(cart.total).to.be.equal(0)
+  expect(cart.list().length).should.be.equal(0)
 });
 
 it("Should return the total cost of all items in the cart", function() {
   const cart = new Cart();
-  expect(card.cost()).to.be.equal(0)
+  expect(cart.cost()).to.be.equal(0)
   cart.new("item", 5);
-  expect(card.cost()).to.be.equal(5)
+  expect(cart.cost()).to.be.equal(5)
   cart.new("item2", 6);
-  expect(card.cost()).to.be.equal(11)
+  expect(cart.cost()).to.be.equal(11)
 });
